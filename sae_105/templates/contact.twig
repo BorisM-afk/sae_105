@@ -1,0 +1,180 @@
+{% extends 'base.twig' %}
+
+{% block css %}
+	<link rel="stylesheet" href="../css/statiques.css">
+	<link rel="stylesheet" href="../css/form.css">
+{% endblock %}
+
+{% block main %}
+   {# Contenu du main #}
+   <main>
+      <div class="main-content">
+         <section>
+            
+            {# ========================================== #}
+            {# EN ANGLAIS #}
+
+            {% if lang == 'en' %}
+               <div class="contact-intro">
+                  <div class="title-container-statique">
+                     <h1>Contact Us</h1>
+                  </div>
+                  <h2>A mistake on the site ? Want to partner up ? Or simply want to share your latest send ?</h2>
+                  <p>Fill out the form below, we'll answer as soon as we're back from the crag !</p>
+               </div>
+               <div class="formulaire">
+                  <div class="logo-contact-top">
+                     <img src="../images/logo/logo-linear-orange-top.png" alt="Logo ClimbScope">
+                  </div>
+
+                  <form action="#" method="post" class="contact-form">
+                     <label for="nom">Last Name:</label>
+                     <input type="text" id="nom" name="nom" required>
+
+                     <label for="prenom">First Name:</label>
+                     <input type="text" id="prenom" name="prenom" required>
+
+                     <label for="email">Email:</label>
+                     <input type="email" id="email" name="email" required>
+
+                     <label for="sujet">Subject:</label>
+                     <select id="sujet" name="sujet" required>
+                        <option value="">--Select a subject--</option>
+                        <option value="erreur_topo">Report an error on the site</option>
+                        <option value="partenariat">Partnership proposal</option>
+                        <option value="nouveau_spot">Suggest a new Spot</option>
+                        <option value="autre">Other inquiry</option>
+                     </select>
+
+                     <label for="niveau">Your climbing level:</label>
+                     <select id="niveau" name="niveau" required>
+                        <option value="">--Select your level--</option>
+                        <option value="debutant">Beginner</option>
+                        <option value="intermediaire">Advanced</option>
+                        <option value="expert">Expert</option>
+                     </select>
+
+                     <label for="message">Message:</label>
+                     <textarea id="message" name="message" rows="5" required placeholder="Your message here..."></textarea>
+
+                     <button type="submit" class="btn-form">Send</button>
+                  </form>
+
+                  <div class="logo-contact-bottom">
+                     <img src="../images/logo/logo-linear-orange-bottom.png" alt="Logo ClimbScope">
+                  </div>
+               </div>
+
+            {# ========================================== #}
+            {# EN ALLEMAND #}
+
+            {% elseif lang == 'de' %}
+               <div class="contact-intro">
+                  <div class="title-container-statique">
+                     <h1>Kontaktieren Sie uns</h1>
+                  </div>
+                  <h2>Ein Fehler auf der Website ? Interesse an einer Partnerschaft ? Oder möchten Sie einfach Ihren letzten Erfolg teilen ?</h2>
+                  <p>Füllen Sie das Formular unten aus, wir antworten, sobald wir vom Fels zurück sind !</p>
+               </div>
+               <div class="formulaire">
+                  <div class="logo-contact-top">
+                     <img src="../images/logo/logo-linear-orange-top.png" alt="Logo ClimbScope">
+                  </div>
+
+                  <form action="#" method="post" class="contact-form">
+                     <label for="nom">Nachname:</label>
+                     <input type="text" id="nom" name="nom" required>
+
+                     <label for="prenom">Vorname:</label>
+                     <input type="text" id="prenom" name="prenom" required>
+
+                     <label for="email">E-Mail:</label>
+                     <input type="email" id="email" name="email" required>
+
+                     <label for="sujet">Betreff:</label>
+                     <select id="sujet" name="sujet" required>
+                        <option value="">--Wählen Sie einen Betreff--</option>
+                        <option value="erreur_topo">Fehler auf der Website melden</option>
+                        <option value="partenariat">Partnerschaftsvorschlag</option>
+                        <option value="nouveau_spot">Neuen Spot vorschlagen</option>
+                        <option value="autre">Sonstige Anfrage</option>
+                     </select>
+
+                     <label for="niveau">Ihr Kletterniveau:</label>
+                     <select id="niveau" name="niveau" required>
+                        <option value="">--Wählen Sie Ihr Niveau--</option>
+                        <option value="debutant">Anfänger</option>
+                        <option value="intermediaire">Fortgeschrittener</option>
+                        <option value="expert">Experte</option>
+                     </select>
+
+                     <label for="message">Nachricht:</label>
+                     <textarea id="message" name="message" rows="5" required placeholder="Ihre Nachricht hier..."></textarea>
+
+                     <button type="submit" class="btn-form">Senden</button>
+                  </form>
+
+                  <div class="logo-contact-bottom">
+                     <img src="../images/logo/logo-linear-orange-bottom.png" alt="Logo ClimbScope">
+                  </div>
+               </div>
+
+            {# ========================================== #}
+            {# EN FRANÇAIS #}
+
+            {% else %}
+               <div class="contact-intro">
+                  <div class="title-container-statique">
+                     <h1>Contactez-Nous</h1>
+                  </div>
+                  <h2>Une erreur dans le site ? Une envie de partenariat ? Ou simplement envie de partager votre dernier exploit ?</h2>
+                  <p>Remplissez le formulaire ci-dessous, nous vous répondrons dès que nous serons redescendus de la falaise !</p>
+               </div>
+               <div class="formulaire">
+                  <div class="logo-contact-top">
+                     <img src="../images/logo/logo-linear-orange-top.png" alt="Logo ClimbScope">
+                  </div>
+
+                  <form action="#" method="post" class="contact-form">
+                     <label for="nom">Nom :</label>
+                     <input type="text" id="nom" name="nom" required>
+
+                     <label for="prenom">Prénom :</label>
+                     <input type="text" id="prenom" name="prenom" required>
+
+                     <label for="email">Email :</label>
+                     <input type="email" id="email" name="email" required>
+
+                     <label for="sujet">Sujet :</label>
+                     <select id="sujet" name="sujet" required>
+                        <option value="">--Sélectionnez un sujet--</option>
+                        <option value="erreur_topo">Signaler une erreur sur le site</option>
+                        <option value="partenariat">Proposition de partenariat</option>
+                        <option value="nouveau_spot">Suggestion de nouveau Spot</option>
+                        <option value="autre">Autre demande</option>
+                     </select>
+
+                     <label for="niveau">Votre niveau de grimpe :</label>
+                     <select id="niveau" name="niveau" required>
+                        <option value="">--Sélectionnez votre niveau--</option>
+                        <option value="debutant">Débutant</option>
+                        <option value="intermediaire">Confirmé</option>
+                        <option value="expert">Expert</option>
+                     </select>
+
+                     <label for="message">Message :</label>
+                     <textarea id="message" name="message" rows="5" required placeholder="Votre message ici..."></textarea>
+
+                     <button type="submit" class="btn-form">Envoyer</button>
+                  </form>
+
+                  <div class="logo-contact-bottom">
+                     <img src="../images/logo/logo-linear-orange-bottom.png" alt="Logo ClimbScope">
+                  </div>
+               </div>
+            {% endif %}
+            
+         </section>
+      </div>
+   </main>
+{% endblock %}

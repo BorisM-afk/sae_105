@@ -1,0 +1,190 @@
+/* === NAVIGATION CATÉGORIES === */
+
+.navigation-categories {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+   margin: 20px 0;
+   background-color: var(--main-bg);
+   padding: 10px;
+   border-radius: 10px;
+   border: var(--aside-border) solid 2px;
+}
+
+.navigation-categories h3 {
+   border-bottom: solid 2px var(--category-title-border);
+   font-size: 25px;
+   width: 200px;
+   text-align: center;
+}
+
+.navigation-categories a {
+   text-decoration: none;
+   color: var(--text-contenu);
+   font-size: 20px;
+   padding: 10px 40px 10px 40px;
+   border-radius: 5px;
+   border: solid 2px var(--category-title-border);
+   background-color: var(--category-title-bg);
+   transition: all 0.3s ease;
+}
+
+.navigation-categories a:hover {
+   background-color: var(--aside-bg-hover);
+   color: var(--aside-text-hover);
+   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+   transform: translateY(-3px);
+}
+
+.nav-cat-border {
+   display: flex;
+   border: solid 2px var(--aside-border);
+   padding: 10px;
+   border-radius: 10px;
+   width: 100%;
+   justify-content: space-evenly;
+   box-shadow:3px 3px 7px rgba(0, 0, 0, 0.6)
+}
+
+.cat1-article {
+   display: flex;
+   border: solid 3px var(--main-border);
+   border-radius: 10px;
+   background-color: var(--main-bg);
+   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+   margin: 30px 0;
+   overflow: hidden; /* Pour respecter le border-radius et empêcher le débordement */
+   transition: all 0.3s ease;
+}
+
+.cat1-article:hover {
+   transform: scale(1.02);
+   border-color: var(--accent);
+   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Alternance des articles */
+
+.cat1-article:nth-child(odd) {
+   /* 1er / 3e / 5e ... en row reverse donc image à droite et contenu à gauche */
+   flex-direction: row-reverse;
+}
+
+.cat1-article:nth-child(even) {
+   /* 2e / 4e / 6e ... en row donc image à gauche et contenu à droite */
+   flex-direction: row;
+}
+
+/* === IMAGES DES ARTICLES === */
+
+/* Propriétés des images dans les articles */
+.cat1-article img {
+   width: auto;
+   height: 100%;
+   object-fit: cover;
+}
+
+/* Bouger l'image du 3e article parce qu'elle est mal cadrée (une galère cet "object-position") */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/object-position */
+
+.cat1-article:nth-child(3) img { /* Correspond à l'article sur la Vitesse */
+   object-position: center right;
+}
+
+.image-article {
+   min-height: 400px;
+   position: relative;
+   flex: 1;
+}
+
+/* === TEXTES DES ARTICLES === */
+
+.contenu-article {
+   flex: 1;
+   padding: 20px;
+}
+
+.contenu-article h2 {
+   margin-bottom: 15px;
+   color: var(--accent);
+   text-align: center;
+   font-size: 28px;
+   border-bottom: solid 2px var(--art-title-border);
+   padding-bottom: 10px;
+}
+
+.contenu-article p {
+   font-size: 16px;
+   line-height: 1.6;
+   color: var(--text-contenu);
+   text-align: justify;
+}
+
+/* --- INFOS CLÉS ---*/
+
+.infos-cles {
+   margin-top: 20px;
+}
+
+.infos-cles h3 {
+   color: var(--art-div-title);
+   font-size: 20px;
+   margin: 10px auto 5px auto;
+   border-bottom: solid 2px var(--art-div-title);
+   max-width: fit-content;
+}
+
+.infos-cles ul {
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   list-style-type: none;
+   margin: 20px 0;
+   background-color: var(--intra-div-bg);
+   padding: 10px;
+   border-radius: 10px;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   font-size: 13px;
+}
+
+/* Contenu supplémentaire (équipement, profil physique) */
+
+.contenu-supp {
+   margin-top: 20px;
+   font-size: 14px;
+   line-height: 1.6;
+   color: var(--text-contenu);
+   display: flex; 
+   flex-direction: column;
+   gap: 10px;
+}
+
+.tag1 {
+   background-color: var(--tag1);
+   color: white;
+   padding: 3px 7px;
+   border-radius: 10px;
+}
+
+.tag1:hover {
+   background-color: var(--hover-tag1);
+   cursor:pointer;
+}
+
+.tag2:hover {
+   background-color: var(--hover-tag2);
+}
+
+/* METTRE DES LIENS POUR LES TAGS VERS DES SITES EXTERNES POUR ACHETER LE MATOS
+OU VERS LES ARTICLES DU MATOS */
+
+.tag2 {
+   background-color: var(--tag2);
+   color: white;
+   padding: 3px 7px;
+   border-radius: 10px;
+}
+

@@ -1,0 +1,59 @@
+/* === VARIABLES === */
+
+/*Palette de couleurs du site web*/
+:root {
+    /* Textes */
+    --text-light: #ecf0f1;
+    --text-contenu: black; 
+    --citation: grey;
+
+    /* Accentuations */
+    --accent: orangered; 
+
+    /* Borders */
+    --div-border: #002427;
+    --main-border: #979797;
+    --header-border: #243241;
+    --footer-border: #172029;
+
+    /* Backgrounds */
+    --header-bg: #2c3e50;
+    --footer-bg: #1a252f; 
+    --hover-bg: orange;
+    --main-bg: rgb(255, 255, 255);
+    --form-bg: lightgrey;
+    --body-bg: #ebefff;
+    --div-bg: #ffffff;
+    --intra-div-bg: #e2e2e2;
+    --sous-menu-bg: #446383;
+
+    /* Titres Statiques */
+    --statique-title-bg: rgba(236, 236, 236, 0.534);
+    --statique-title-border: rgb(91, 121, 255);
+
+    /* Titres Catégories */
+    --category-title-bg: rgba(236, 236, 236, 0.534);
+    --category-title-border: rgb(255, 121, 0);
+
+    /* Articles */
+    --art-title-border: black;
+    --art-div-title: #344c64;
+
+    /* Navigation Catégories / Aside */
+    --aside-bg: orangered;
+    --aside-text: #ecf0f1; 
+    --aside-border: #555555;
+    --aside-bg-hover: orange;
+    --aside-text-hover: black;
+    --aside-text-border: rgb(255, 104, 49);
+
+    /* --- TAGS --- */
+    /* catégorie 1 : */
+    --tag1: #3498db; /* Bleu */
+    --tag2: #e74c3c; /* Rouge */
+    --hover-tag1: #46adf1;
+    --hover-tag2: #e66354;
+    /* catégorie 2 : */
+    --tag3: #2c3e50; /* Vert */
+    --hover-tag3: #435568;
+}

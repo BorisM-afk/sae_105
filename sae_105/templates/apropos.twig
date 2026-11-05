@@ -1,0 +1,144 @@
+{% extends 'base.twig' %}
+
+{% block css %}
+	<link rel="stylesheet" href="../css/statiques.css">
+{% endblock %}
+
+{% block main %}
+   {# Contenu du main #}
+   <main>
+      <div class="main-content">
+         
+         {# ========================================== #}
+         {# EN ANGLAIS  #}
+
+         {% if lang == 'en' %}
+            <section class="section-apropos">
+               <div class="apropos-intro">
+                  <div class="title-container-statique">
+                     <h1>About ClimbScope</h1>
+                  </div>
+                  <div class="colonne">
+                     <h3>Our Mission</h3>
+                     <p>Born from the meeting of mountain enthusiasts and web developers, ClimbScope was created as part of a university project (BUT MMI). Our goal is simple: democratize climbing by making technical information accessible, while promoting responsible and environmentally respectful practice.</p>
+                  </div>
+                  <div class="colonne">
+                     <h3>The Team</h3>
+                     <p>We are Sunday climbers and hangboard addicts. MMI students by day and send-hunters by night, we created ClimbScope to share our passion. We believe the best climber isn't the one climbing the hardest grade, but the one having the most fun (and coming home safe).</p>
+                  </div>
+               </div>
+            </section>
+
+            <section class="section-apropos">
+               <h2>Terms of Service (TOS)</h2>
+               <div class="colonne">
+                  <h3>1. Legal Notice</h3>
+                  <p>This site is published for educational purposes.</p>
+                  <p>Hosting: IUT Servers.</p>
+                  <p>Publication Director: The ClimbScope Team.</p>
+               </div>
+               <div class="colonne">
+                  <h3>2. Intellectual Property</h3>
+                  <p>The content of this site, including texts, images, and logos, is protected by copyright. Any reproduction or use without permission is prohibited.</p>
+               </div>
+               <div class="colonne">
+                  <h3>3. Limitation of Liability</h3>
+                  <p>All content (texts, images, database) on ClimbScope is protected by copyright. Any partial or total reproduction without permission is prohibited. Images used come from royalty-free image banks (Unsplash) or our partners.</p>
+                  <p>The team declines all responsibility in case of accident, misuse of equipment, or misinterpretation of content. Climbing requires training from qualified professionals and systematic verification of conditions on the ground.</p>
+               </div>
+               <div class="colonne">
+                  <h3>4. Personal Data</h3>
+                  <p>In accordance with GDPR, no personal data is collected without your knowledge. Information entered in the contact form is only used to respond to your request and is never transmitted to third parties.</p>
+               </div>
+            </section>
+
+         {# ========================================== #}
+         {# EN ALLEMAND #}
+
+         {% elseif lang == 'de' %}
+            <section class="section-apropos">
+               <div class="apropos-intro">
+                  <div class="title-container-statique">
+                     <h1>Über ClimbScope</h1>
+                  </div>
+                  <div class="colonne">
+                     <h3>Unsere Mission</h3>
+                     <p>Geboren aus der Begegnung von Bergbegeisterten und Webentwicklern, wurde ClimbScope im Rahmen eines Universitätsprojekts (BUT MMI) erstellt. Unser Ziel ist einfach: Klettern zu demokratisieren, indem technische Informationen zugänglich gemacht werden, und gleichzeitig eine verantwortungsvolle und umweltfreundliche Praxis zu fördern.</p>
+                  </div>
+                  <div class="colonne">
+                     <h3>Das Team</h3>
+                     <p>Wir sind Sonntagskletterer und Trainingsboard-Fanatiker. MMI-Studenten bei Tag und Projektjäger bei Nacht – wir haben ClimbScope gegründet, um unsere Leidenschaft zu teilen. Wir glauben, dass der beste Kletterer nicht derjenige ist, der den höchsten Grad klettert, sondern derjenige, der am meisten Spaß hat (und abends heil nach Hause kommt).</p>
+                  </div>
+               </div>
+            </section>
+
+            <section class="section-apropos">
+               <h2>Nutzungsbedingungen (AGB)</h2>
+               <div class="colonne">
+                  <h3>1. Impressum</h3>
+                  <p>Diese Website wird zu pädagogischen Zwecken veröffentlicht.</p>
+                  <p>Hosting: IUT-Server.</p>
+                  <p>Veröffentlichungsleiter: Das ClimbScope-Team.</p>
+               </div>
+               <div class="colonne">
+                  <h3>2. Geistiges Eigentum</h3>
+                  <p>Der Inhalt dieser Website, einschließlich Texte, Bilder und Logos, ist urheberrechtlich geschützt. Jede Vervielfältigung oder Nutzung ohne Genehmigung ist untersagt.</p>
+               </div>
+               <div class="colonne">
+                  <h3>3. Haftungsbeschränkung</h3>
+                  <p>Alle Inhalte (Texte, Bilder, Datenbanken) auf ClimbScope sind urheberrechtlich geschützt. Jede teilweise oder vollständige Vervielfältigung ohne Genehmigung ist verboten. Die verwendeten Bilder stammen aus lizenzfreien Bilddatenbanken (Unsplash) oder von unseren Partnern.</p>
+                  <p>Das Team lehnt jede Verantwortung bei Unfällen, missbräuchlicher Verwendung von Ausrüstung oder Fehlinterpretation von Inhalten ab. Das Klettern erfordert eine Ausbildung durch qualifizierte Fachleute und eine systematische Überprüfung der Bedingungen vor Ort.</p>
+               </div>
+               <div class="colonne">
+                  <h3>4. Personenbezogene Daten</h3>
+                  <p>Gemäß der DSGVO werden ohne Ihr Wissen keine personenbezogenen Daten erhoben. Die im Kontaktformular eingegebenen Informationen werden nur zur Beantwortung Ihrer Anfrage verwendet und niemals an Dritte weitergegeben.</p>
+               </div>
+            </section>
+
+         {# ========================================== #}
+         {# EN FRANÇAIS #}
+
+         {% else %}
+            <section class="section-apropos">
+               <div class="apropos-intro">
+                  <div class="title-container-statique">
+                     <h1>À propos de ClimbScope</h1>
+                  </div>
+                  <div class="colonne">
+                     <h3>Notre mission</h3>
+                     <p>Né de la rencontre entre passionnés de montagne et développeurs web, ClimbScope a été créé dans le cadre d'un projet universitaire (BUT MMI). Notre objectif est simple : démocratiser l'escalade en rendant l'information technique accessible, tout en promouvant une pratique responsable et respectueuse de l'environnement.</p>
+                  </div>
+                  <div class="colonne">
+                     <h3>L'équipe</h3>
+                     <p>Nous sommes des grimpeurs du dimanche et des acharnés de la poutre d'entraînement. Étudiants en MMI le jour et chasseurs de croix la nuit, nous avons créé ClimbScope pour partager notre passion. Nous croyons que le meilleur grimpeur n'est pas celui qui fait le niveau le plus élevé, mais celui qui prend le plus de plaisir (et qui rentre entier le soir).</p>
+                  </div>
+               </div>
+            </section>
+
+            <section class="section-apropos">
+               <h2>Conditions Générales d'Utilisation (CGU)</h2>
+               <div class="colonne">
+                  <h3>1. Mentions Légales</h3>
+                  <p>Ce site est édité à des fins pédagogiques.</p>
+                  <p>Hébergement : Serveurs de l'IUT.</p>
+                  <p>Directeur de la publication : L'équipe ClimbScope.</p>
+               </div>
+               <div class="colonne">
+                  <h3>2. Propriété Intellectuelle</h3>
+                  <p>Le contenu de ce site, incluant textes, images et logos, est protégé par le droit d'auteur. Toute reproduction ou utilisation sans autorisation est interdite.</p>
+               </div>
+               <div class="colonne">
+                  <h3>3. Limitation de Responsabilité</h3>
+                  <p>L'ensemble des contenus (textes, images, base de données) présents sur ClimbScope sont protégés par le droit d'auteur. Toute reproduction partielle ou totale sans autorisation est interdite. Les images utilisées proviennent de banques d'images libres de droits (Unsplash) ou de nos partenaires.</p>
+                  <p>L'équipe décline toute responsabilité en cas d'accident, de mauvaise utilisation du matériel ou d'erreur d'interprétation des contenus. La pratique de l'escalade nécessite une formation auprès de professionnels qualifiés et une vérification systématique des conditions sur le terrain.</p>
+               </div>
+               <div class="colonne">
+                  <h3>4. Données Personnelles</h3>
+                  <p>Conformément au RGPD, aucune donnée personnelle n'est collectée à votre insu. Les informations saisies dans le formulaire de contact ne sont utilisées que pour répondre à votre demande et ne sont jamais transmises à des tiers.</p>
+               </div>
+            </section>
+         {% endif %}
+
+      </div>
+   </main>
+{% endblock %}

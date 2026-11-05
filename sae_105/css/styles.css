@@ -1,0 +1,316 @@
+/* === STYLES COMMUN À TOUTES LES PAGES === */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* - style de l'icone de la page - */
+
+head link[rel="icon"] {
+    width: 200px;
+    height: 200px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 70px;
+    background-color: var(--body-bg);
+}
+
+main {
+    max-width: 1200px;
+    margin: 50px auto 30px auto;
+    padding: 20px;
+    min-height: 800px;
+    background-color: var(--main-bg);
+    border: solid 2px var(--main-border);
+    border-radius: 30px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* === HEADER STYLE === */
+
+/* Le header est fixe en haut de la page et prend toute la largeur */
+
+header {
+    background-color: var(--header-bg);
+    color: var(--text-light);
+    padding: 0 200px;
+    position: fixed;
+    height: 100px;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    border: solid 2px;
+    border-color: var(--header-border);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    z-index: 1000;
+}
+
+/* Le contenu du header prend seulement 1200px et est centré comme c'est demandé 
+cela a été vu avec M. Fritz, seulement le contenu peut-être centré, pas le header lui-même */
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 15px auto;
+}
+
+/* MENU NAV */
+
+.main-nav-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav-container img {
+    height: 70px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.main-nav-container img:hover {
+    transform: rotate(-5deg) scale(1.05);
+    filter: drop-shadow(4px 6px 10px rgba(0, 0, 0, 0.8));
+}
+
+.sub-nav-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+}
+
+header nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--hover-bg);
+    border-left: solid 2px var(--accent);
+    border-right: solid 2px var(--accent);
+    padding: 0 10px 0 10px;
+    filter: drop-shadow(4px 6px 10px rgba(0, 0, 0, 0.5));
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--header-bg);
+    z-index: 1000;
+    border: solid 2px var(--header-border);
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+header nav>ul li:hover .sub-menu {
+    display: block;
+    background-color: var(--sous-menu-bg);
+}
+
+.sub-menu li {
+    float: middle;
+    width: 100%;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.sub-menu a {
+    border-bottom: solid 1px var(--div-border);
+    display: block;
+}
+
+.no-border {
+    border: none !important;
+}
+
+/* Bouton Contact */
+
+.btn-contact {
+    background-color: var(--accent);
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: white !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease;
+    border: none !important;
+}
+
+.btn-contact:hover {
+    background-color: var(--hover-bg);
+    padding: 10px 22px;
+}
+
+/* === COMMUN À TOUTES LES PAGES CATÉGORIES === */
+
+.title-container-cat {
+    background-color: var(--main-bg);
+    border: solid 2px var(--main-border);
+    border-radius: 30px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    margin-top: 30px;
+}
+
+.title-container-cat h1 {
+    text-align: center;
+    font-size: 36px;
+    position: relative;
+    border: solid 2px var(--category-title-border);
+    border-radius: 30px;
+    background-color: var(--category-title-bg);
+    padding: 15px 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+.categorie-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+i {
+    margin-right: 5px;
+    color: var(--accent);
+}
+
+article.cat1-article, article.cat2-article, div.cat-section {
+    scroll-margin-top: 120px; 
+    /* Permet aux ancres de ne pas être cachées par le header fixe */
+    /* Laisse 120px d'espace entre le haut de la page et l'élément ciblé par l'ancre */
+}
+
+/* === FOOTER STYLE === */
+
+/* Comme le header, le footer prend toute la largeur en bas de la page */
+.site-footer {
+    background-color: var(--footer-bg);
+    color: var(--text-light);
+    padding: 50px 20px 20px;
+    margin-top: auto;
+    border: solid 3px;
+    border-color: var(--footer-border);
+}
+
+/* Mais le contenu du footer est centré et limité à 1200px */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+}
+
+.footer-col p {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.footer-col a:hover {
+    color: var(--hover-bg);
+    padding-left: 5px;
+}
+
+/* Réseaux Sociaux */
+.reseaux-sociaux {
+    display: flex;
+    gap: 15px;
+}
+
+.reseaux-sociaux i {
+    color: white !important;
+    margin: 0 !important;
+}
+
+.reseaux-sociaux a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.reseaux-sociaux a:hover {
+    background-color: var(--hover-bg);
+    padding-left: 0;
+    transform: translateY(-3px);
+}
+
+/* Barre de copyright */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #7f8c8d;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+

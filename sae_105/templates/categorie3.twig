@@ -1,0 +1,175 @@
+{% extends 'base.twig' %}
+
+{% block css %}
+	<link rel="stylesheet" href="../css/cat3.css">
+{% endblock %}
+
+{% block main %}
+	<main class="categorie-main">
+
+		<div class="title-container-cat">
+			<h1>{{ page_titre }}</h1>
+		</div>
+
+		<div class="matos-page">
+
+			<aside class="matos-aside">
+				{% if lang == 'fr' %}
+					<h3>
+						<i class="fa-solid fa-compass"></i>
+						Sommaire</h3>
+				{% elseif lang == 'en' %}
+					<h3>
+						<i class="fa-solid fa-compass"></i>
+						Contents</h3>
+				{% elseif lang == 'de' %}
+					<h3>
+						<i class="fa-solid fa-compass"></i>
+						Inhalt</h3>
+				{% endif %}
+				<nav class="nav-matos">
+					<ul>
+						{% for id, rubrique in catC %}
+							<li>
+								<a href="#{{ id }}">{{ rubrique.titre_categorie }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</nav>
+
+				<div class="aside-info">
+					<h3>
+						<i class="fa-solid fa-bullhorn"></i>
+						{{ info_flash.titre }}</h3>
+					<p>{{ info_flash.texte }}</p>
+				</div>
+
+				<div class="aside-footer">
+					<p>{{ info_flash.texte_avc }}</p>
+					<a href="https://www.auvieuxcampeur.fr/" target="_blank">
+						<img src="../images/logo/au_vieux_campeur_logo.png" alt="Logo Au Vieux Campeur" class="logo-avc">
+					</a>
+					<a class="btn-achat" href="https://www.auvieuxcampeur.fr/" target="_blank">
+						{% if lang == 'fr' %}
+							Aller "Au Vieux Campeur"
+						{% elseif lang == 'en' %}
+							Go to "Au Vieux Campeur"
+						{% elseif lang == 'de' %}
+							Gehe zu "Au Vieux Campeur"
+						{% endif %}
+					</a>
+				</div>
+			</aside>
+
+			<section class="matos-main-content">
+
+				{% for id, rubrique in catC %}
+
+					<div id="{{ id }}" class="cat-section">
+
+						<div class="cat-header">
+							<h2>{{ rubrique.titre_categorie }}</h2>
+							<p class="cat-intro">{{ rubrique.intro }}</p>
+						</div>
+
+						{% for specs in rubrique.produits %}
+
+							<article class="matos-row">
+								<div class="col-id-produit">
+									<img src="{{ specs.image_produit }}" class="produit-img" alt="{{ specs.produit }}">
+									<div class="produit-nom">{{ specs.produit }}</div>
+									{% if specs.avis_expert.profil_type is defined %}
+										{# Si la variable 'avis_expert.profil_type' est présente dans data3.php alors ça l'affiche #}
+										<span class="produit-profil">{{ specs.avis_expert.profil_type }}</span>
+									{% endif %}
+								</div>
+
+								<div class="col-specs">
+									{% if specs.infos_caseC.poids_g is defined %}
+										<div class="spec-item">
+											<i class="fas fa-weight-hanging"></i>
+											{# Impossible de trouver d'icône balance dans bootstrap #}
+											{# Ta logique Kg/g #}
+											{% if specs.infos_caseC.poids_g >= 1000 %}
+												{# Si le poids est supérieur ou égal à 1000g #}
+												{{ specs.infos_caseC.poids_g / 1000 }}
+												kg
+											{% else %}
+												{{ specs.infos_caseC.poids_g }}
+												{# Sinon affiche en grammes #}
+												g
+											{% endif %}
+										</div>
+									{% endif %}
+
+									{% if specs.infos_caseC.durabilite is defined %}
+										<div class="spec-item">
+											<i class="bi bi-shield-fill"></i>
+											Durabilité :
+											{{ specs.infos_caseC.durabilite }}
+										</div>
+									{% endif %}
+
+									{% if specs.infos_caseC.couleurs_dispo is defined %}
+										<div class="spec-item">
+											<i class="bi bi-palette-fill"></i>
+										</i>
+										{% for couleur in specs.infos_caseC.couleurs_dispo %}
+											{{ couleur }}
+											{% if not loop.last %},
+											{% endif %}
+											{# https://twig.symfony.com/doc/3.x/tags/for.html #}
+											{# Tant que c'est pas la denière couleur, ajoute une virgule #}
+										{% endfor %}
+									</div>
+								{% endif %}
+
+								<div class="achat-container">
+									<a href="{{ specs.lien_achat }}" target="_blank" class="btn-achat">
+										<i class="fas fa-shopping-cart"></i>
+										{% if lang == 'fr' %}Dispo "Au Vieux Campeur"
+											{% elseif lang == 'en' %}Available at "Au Vieux Campeur"
+											{% elseif lang == 'de' %}Verfügbar bei "Au Vieux Campeur"
+										{% endif %}
+									</a>
+								</div>
+							</div>
+
+							<div class="col-expert">
+								{% if specs.avis_expert is defined %}
+									<div class="expert-score">
+										<span class="score-valeur">{{ specs.avis_expert.note_sur_10 }}/10</span>
+										<span
+											class="score-etoiles">
+											{# Affichage des étoiles en fonction de la note #}
+											{% if specs.avis_expert.note_sur_10 is defined %}
+												{% if specs.avis_expert.note_sur_10 >= 9 %}★★★★★
+													{% elseif specs.avis_expert.note_sur_10 >= 7 %}★★★★☆
+													{% else %}★★★☆☆
+												{% endif %}
+											{% endif %}
+										</span>
+									</div>
+									<ul class="avis-liste">
+										<li class="avis-positif">
+											<i class="fa-solid fa-circle-plus"></i>
+											{# Certains icônes rendent mieux sur Font Awesome #}
+											{{ specs.avis_expert.les_plus }}
+										</li>
+										<li class="avis-negatif">
+											<i class="fa-solid fa-circle-minus"></i>
+											{# Comme ceux-là #}
+											{{ specs.avis_expert.les_moins }}
+										</li>
+									</ul>
+								{% endif %}
+							</div>
+						</article>
+					{% endfor %}
+					{# Fin produits #}
+				</div>
+			{% endfor %}
+			{# Fin rubriques #}
+		</section>
+	</div>
+</main>{% endblock %}

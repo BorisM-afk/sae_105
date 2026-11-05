@@ -1,0 +1,121 @@
+/* === CSS PAGES STATIQUES === */
+
+/* --- CONTENEUR TITRE STATIQUE --- */
+
+.title-container-statique h1 {
+   text-align: center;
+   font-size: 36px;
+   position: relative;
+   border: solid 2px var(--statique-title-border);
+   border-radius: 30px;
+   background-color: var(--statique-title-bg);
+   padding: 15px 20px;
+   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+   margin: 20px;
+}
+
+/* --- PAGE ACCUEIL --- */
+
+.intro-accueil {
+   border-bottom: solid 2px var(--art-border-title);
+   padding-bottom: 15px;
+   margin-bottom: 20px;
+}
+
+.intro-accueil h3 {
+   font-size: 20px;
+   color: var(--text-contenu);
+   text-align: center;
+   margin-top: 0;
+   margin-bottom: 30px;
+}
+
+.intro-accueil p {
+   text-align: center;
+}
+
+.category-card {
+   border: solid 2px var(--div-border);
+   background-color: var(--div-bg);
+   border-radius: 10px;
+   padding: 15px;
+   margin-bottom: 15px;
+   box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.1);
+   transition: all 0.3s ease;
+}
+
+.categories a {
+   text-decoration: none;
+   color: inherit;
+}
+
+.category-card:hover {
+   box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.8);
+   transform: translateY(-6px);
+}
+
+.category-card h2 {
+   font-size: 24px;
+   color: var(--text-contenu);
+   margin-top: 10px; 
+}
+
+.category-card img {
+   width: 100%;
+   border-radius: 15px;
+   height: auto;
+   margin: 0 auto;
+}
+
+.btn-category {
+   display: flex;
+   justify-content: center;
+   margin-top: 10px;
+   padding: 8px 15px;
+   background-color: var(--accent);
+   color: white !important;
+   border-radius: 5px;
+   text-decoration: none;
+   font-weight: bold;
+   transition: background-color 0.3s;
+}
+
+.btn-category:hover {
+   background-color: var(--hover-bg);
+}
+
+/* --- PAGE À PROPOS --- */
+
+.apropos-intro {
+   padding-bottom: 15px;
+   margin-bottom: 20px;
+}
+
+.colonne {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   margin-bottom: 20px;
+}
+
+.section-apropos h2 {
+   font-size: 28px;
+   padding-bottom: 10px;
+   border-bottom: solid 2px var(--art-title-border);
+   color: var(--art-div-title);
+   margin: 0 auto 15px auto;
+   width: 600px;
+   text-align: center;
+}
+
+
+/* --- PAGE CONTACT --- */
+
+.contact-intro {
+   border-bottom: solid 2px var(--art-title-border);
+   padding-bottom: 15px;
+   margin-bottom: 20px;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}

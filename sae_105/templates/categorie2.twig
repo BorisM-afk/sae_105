@@ -1,0 +1,126 @@
+{% extends 'base.twig' %}
+
+{% block css %}
+	<link rel="stylesheet" href="../css/cat2.css">
+{% endblock %}
+
+{% block main %}
+	{# Contenu du main #}
+
+	<main class="categorie-main">
+		<div class="title-container-cat">
+			<h1>{{ page_titre }}</h1>
+		</div>
+
+		<div class="navigation-categories">
+			{% if lang == 'fr' %}
+				<h3>
+					<i class="fa-solid fa-compass"></i>
+					Sommaire</h3>
+			{% elseif lang == 'en' %}
+				<h3>
+					<i class="fa-solid fa-compass"></i>
+					Contents</h3>
+			{% elseif lang == 'de' %}
+				<h3>
+					<i class="fa-solid fa-compass"></i>
+					Inhalt</h3>
+			{% endif %}
+			<div class="nav-cat-border">
+				{% for id, cat in catB %}
+					<a href="#{{ cat.id }}">{{ cat['title-id'] }}</a>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="categorie-section">
+			<div
+				class="art-container">
+				{# Boucle pour afficher les catégories de la catégorie 2 #}
+				{% for cat in catB %}
+					<article class="cat2-article" id="{{ cat.id }}">
+						<div class="flag-image">
+							<div class="pays-label">
+								<span class="pays-nom">{{ cat.pays }}</span>
+								<span class="pays-flag">{{ cat.flag }}</span>
+							</div>
+							<div class="art-img">
+								<img src="{{ cat.image }}" alt="{{ cat.nom }}">
+							</div>
+						</div>
+						<div class="contenu-article">
+							<h2>{{ cat.nom }}</h2>
+							<div class="infos-cles">
+								<h3>{{ infos_cles['infos_cles'] }}</h3>
+								<ul>
+									<li>
+										<div>
+											<i class="bi bi-gem"></i>
+											{{ infos_cles['type_roche'] }}</div>
+										<div class="infos">{{ cat.infos_caseB.type_roche }}</div>
+									</li>
+									<li>
+										<div>
+											<i class="bi bi-calendar-event"></i>
+											{{ infos_cles['meilleure_saison'] }}</div>
+										<div class="infos">{{ cat.infos_caseB.meilleure_saison }}</div>
+									</li>
+									<li>
+										<div>
+											<i class="bi bi-list-ul"></i>
+											{{ infos_cles['nombre_voies'] }}</div>
+										<div class="infos">{{ cat.infos_caseB.nombre_voies }}</div>
+									</li>
+									<li>
+										<div>
+											<i class="bi bi-houses"></i>
+											{{ infos_cles['ville_proche'] }}</div>
+										<div class="infos">{{ cat.infos_caseB.ville_proche }}</div>
+									</li>
+									<li>
+										<div>
+											<i class="bi bi-clipboard2-data"></i>
+											{{ infos_cles['niveau_requis'] }}</div>
+										<div class="infos">{{ cat.infos_caseB.niveau_requis }}</div>
+									</li>
+								</ul>
+							</div>
+
+							<div class="contenu-supp">
+
+								<span class="avis-general">{{ cat.avis_general }}</span>
+								<span class="coordonnees-gps">
+									<i class="bi bi-pin-fill"></i>
+									{{ cat.coordonnees_gps }}
+								</span>
+
+								<a class="btn-url-gps" href="{{ cat.lien_gps }}" target="{{ cat.nom }}">
+										{% if lang == 'fr' %}Voir sur Google Maps
+											{% elseif lang == 'en' %}See on Google Maps
+											{% elseif lang == 'de' %}Auf Google Maps ansehen
+										{% endif %}
+								</a>
+
+								<div class="hebergement">
+									<h3>{{ infos_cles['heb-reco'] }}</h3>
+									<div class="heb-tags">
+										{% for heb in cat.type_hebergement %}
+											<span class="tag">{{ heb }}</span>
+										{% endfor %}
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</article>
+
+				{% endfor %}
+
+			</div>
+
+		</div>
+	</main>
+{% endblock %}

@@ -1,0 +1,326 @@
+/* Conteneur Principal */
+
+.matos-page {
+   display: flex;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 20px;
+   gap: 30px;
+}
+
+/* === ASIDE === */
+
+.matos-aside {
+   width: 280px;
+   background-color: var(--main-bg);
+   border: 2px solid var(--aside-border);
+   border-radius: 10px;
+   padding: 20px;
+   height: fit-content;
+   position: sticky;
+   top: 120px;
+   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.6);
+}
+
+.matos-aside h3 {
+   color: var(--art-div-title);
+   font-size: 20px;
+   text-align: center;
+   margin-bottom: 20px;
+   padding-bottom: 10px;
+   border-bottom: 2px solid var(--category-title-border);
+}
+
+.matos-aside h3 i {
+   margin-right: 10px;
+   color: var(--accent);
+}
+
+/* Liens de navigation */
+
+.nav-matos ul {
+   list-style: none;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+.nav-matos a {
+   display: block;
+   text-decoration: none;
+   color: var(--text-contenu);
+   font-size: 16px;
+   padding: 12px 20px;
+   border-radius: 5px;
+   border: 2px solid var(--category-title-border);
+   background-color: var(--category-title-bg);
+   text-align: center;
+   transition: all 0.3s ease;
+}
+
+.nav-matos a:hover {
+   background-color: var(--aside-bg-hover);
+   color: var(--aside-text-hover);
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+   transform: translateY(-7px);
+}
+
+.aside-info {
+   margin-top: 30px;
+   padding: 15px;
+   background-color: var(--intra-div-bg);
+   border: 1px solid var(--aside-border);
+   border-radius: 8px;
+}
+
+.aside-info p {
+   font-size: 14px;
+   line-height: 1.5;
+   color: var(--text-contenu);
+   text-align: center;
+   font-style: italic;
+}
+
+.aside-footer {
+   margin-top: 20px;
+   font-size: 13px;
+   color: var(--text-contenu);
+   text-align: center;
+}
+
+.aside-footer a {
+   margin-top: 10px;
+   display: inline-block;
+}
+
+.aside-footer img {
+   display: block;
+   margin: 15px auto 0 auto;
+   max-width: 100%;
+}
+/* === CONTENU PRINCIPAL === */
+
+.matos-main-content {
+   background-color: var(--main-bg);
+   border: 2px solid var(--main-border);
+   border-radius: 10px;
+   padding: 25px;
+}
+
+/* --- Titres Rubriques ---*/
+
+.cat-header {
+   margin-bottom: 25px;
+   text-align: center;
+}
+
+.cat-header h2 {
+   color: var(--accent);
+   font-size: 28px;
+   margin-bottom: 10px;
+   border-bottom: 2px solid var(--art-title-border);
+   display: inline-block; /* Permet de faire un border-bottom uniquement sur le texte et pas sur toute la largeur du conteneur */
+   padding-bottom: 5px;
+}
+
+.cat-intro {
+   font-style: italic;
+   color: var(--citation);
+   font-size: 16px;
+}
+
+/* Articles Matériel */
+
+.matos-row {
+   display: flex;
+   background-color: var(--div-bg);
+   border: 3px solid var(--main-border);
+   border-radius: 10px;
+   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+   margin-bottom: 30px;
+   overflow: hidden;
+   transition: all 0.3s ease;
+}
+
+.matos-row:hover {
+   transform: scale(1.01);
+   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.6);
+   border-color: var(--accent);
+}
+
+/* --- COLONNE 1 : IMAGE & IDENTITÉ --- */
+
+.col-id-produit {
+   width: 25%;
+   background-color: var(--intra-div-bg);
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   border-right: 1px solid var(--main-border);
+}
+
+.produit-img {
+   width: 100%;
+   max-width: 150px;
+   height: auto;
+   object-fit: contain;
+   margin-bottom: 15px;
+   border-radius: 5px;
+   background-color: var(--main-bg);
+   padding: 10px;
+   border: 1px solid #ddd;
+}
+
+.produit-nom {
+   font-size: 18px;
+   font-weight: bold;
+   color: var(--art-div-title);
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+/* Badge Profil */
+
+.produit-profil {
+   background-color: var(--tag1);
+   color: white;
+   padding: 5px 10px;
+   border-radius: 10px;
+   font-size: 12px;
+   text-transform: uppercase;
+   text-align: center;
+}
+
+.produit-profil:hover {
+   background-color: var(--hover-tag1);
+}
+
+/* --- SPECS --- */
+.col-specs {
+   width: 30%;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   border-right: 1px solid var(--main-border);
+}
+
+.spec-item {
+   margin-bottom: 15px;
+   font-size: 15px;
+   color: var(--text-contenu);
+   display: flex;
+   align-items: center;
+}
+
+.spec-item i {
+   color: var(--accent);
+   font-size: 18px;
+   margin-right: 10px;
+   width: 25px;
+   text-align: center;
+}
+
+/* --- AVIS --- */
+
+.col-expert {
+   width: 45%;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+/* Boîte de note */
+.expert-score {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: var(--intra-div-bg);
+   padding: 10px 15px;
+   border-radius: 10px;
+   margin-bottom: 15px;
+   border: 1px solid var(--aside-border);
+}
+
+.score-valeur {
+   font-size: 24px;
+   font-weight: bold;
+   color: var(--art-div-title);
+}
+
+.score-etoiles {
+   color: #f1c40f;
+   letter-spacing: 2px;
+}
+
+/* Liste des plus et moins */
+.avis-liste {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.avis-liste li {
+   margin-bottom: 8px;
+   font-size: 14px;
+   display: flex;
+   align-items: flex-start;
+}
+
+.avis-liste i {
+   margin-right: 8px;
+   margin-top: 3px;
+}
+
+/* Couleurs spécifiques pour + et - */
+.avis-positif i {
+   color: #27ae60;
+}
+
+.avis-negatif i {
+   color: #c0392b;
+}
+
+/* --- Lien d'achat --- */
+
+.achat-container {
+   margin-top: 20px;
+   text-align: center;
+   width: 100%;
+}
+
+.btn-achat {
+   display: inline-block;
+   text-decoration: none;
+   background-color: var(--accent);
+   color: var(--text-light);
+   font-weight: bold;
+   font-size: 14px;
+   padding: 10px 20px;
+   border-radius: 50px;
+   border: 2px solid transparent;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+   transition: all 0.3s ease;
+}
+
+.btn-achat i {
+   margin-right: 8px;
+   font-size: 16px;
+   color: var(--text-light);
+}
+
+.btn-achat:hover {
+   background-color: var(--div-bg);
+   color: var(--accent);
+   border-color: var(--accent);
+   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+   transform: translateY(-8px);
+}
+
+.btn-achat:hover i {
+   color: var(--accent);
+}

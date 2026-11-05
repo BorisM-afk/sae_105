@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ titre }}</title>
+		<link rel="icon" type="image/png" href="../images/logo/icone-climbscope.jpeg">
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/variables.css">
+		<link rel="stylesheet" href="../css/styles.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+		<link
+		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+		{# Lien trouvé sur https://cdnjs.com/ pour avoir accès à la librairie Font Awesome 7 sans se connecter ;) #}
+
+		{% block css %}
+			<link rel="stylesheet" href="../css/statiques.css">
+		{% endblock %}
+
+	</head>
+
+	<body>
+		<header>
+			<div
+				class="header-content">
+
+				{# ======= MENU PRINCIPAL ======= #}
+
+				<div class="main-nav-container">
+					{% if lang == 'en' %}
+						<a href="../en/page1-accueil_en.php" class="logo"><img src="../images/logo/logo-climbscope.png" alt="Logo"></a>
+					{% elseif lang == 'de' %}
+						<a href="../de/page1-accueil_de.php" class="logo"><img src="../images/logo/logo-climbscope.png" alt="Logo"></a>
+					{% else %}
+						<a href="../fr/page1-accueil.php" class="logo"><img src="../images/logo/logo-climbscope.png" alt="Logo"></a>
+					{% endif %}
+
+					<nav>
+						{# --- EN ANGLAIS --- #}
+						{% if lang == 'en' %}
+							<ul>
+								<li>
+									<a href="../en/page1-accueil_en.php">Home</a>
+								</li>
+								<li class="deroulant">
+									<a href="../en/page4-disciplines_en.php">Disciplines</a>
+									<ul class="sub-menu">
+										<li>
+											<a href="../en/page4-disciplines_en.php#bloc">Bouldering</a>
+										</li>
+										<li>
+											<a href="../en/page4-disciplines_en.php#lead">Lead Climbing</a>
+										</li>
+										<li>
+											<a href="../en/page4-disciplines_en.php#speed">Speed</a>
+										</li>
+										<li>
+											<a href="../en/page4-disciplines_en.php#multi-pitch">Multi-pitch</a>
+										</li>
+										<li>
+											<a class="no-border" href="../en/page4-disciplines_en.php#trad">Trad</a>
+										</li>
+									</ul>
+								</li>
+								<li class="deroulant">
+									<a href="../en/page5-spotsmythiques_en.php">Mythical Spots</a>
+									<ul class="sub-menu">
+										<li>
+											<a href="../en/page5-spotsmythiques_en.php#fontainebleau">Fontainebleau</a>
+										</li>
+										<li>
+											<a href="../en/page5-spotsmythiques_en.php#kalymnos">Kalymnos</a>
+										</li>
+										<li>
+											<a href="../en/page5-spotsmythiques_en.php#yosemite_valley">Yosemite</a>
+										</li>
+										<li>
+											<a href="../en/page5-spotsmythiques_en.php#siurana">Siurana</a>
+										</li>
+										<li>
+											<a class="no-border" href="../en/page5-spotsmythiques_en.php#rocklands">Rocklands</a>
+										</li>
+									</ul>
+								</li>
+								<li class="deroulant">
+									<a href="../en/page6-materiel_en.php">Gear Guide</a>
+									<ul class="sub-menu">
+										<li>
+											<a href="../en/page6-materiel_en.php#chaussons">Shoes</a>
+										</li>
+										<li>
+											<a href="../en/page6-materiel_en.php#baudriers">Harnesses</a>
+										</li>
+										<li>
+											<a href="../en/page6-materiel_en.php#cordes">Ropes</a>
+										</li>
+										<li>
+											<a class="no-border" href="../en/page6-materiel_en.php#assurage">Belay</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+
+							{# --- EN ALLEMAND --- #}
+						{% elseif lang == 'de' %}
+							<ul>
+								<li>
+									<a href="../de/page1-accueil_de.php">Startseite</a>
+								</li>
+								<li class="deroulant">
+									<a href="../de/page4-disciplines_de.php">Disziplinen</a>
+									<ul class="sub-menu">
+										<li>
+											<a href="../de/page4-disciplines_de.php#bloc">Bouldern</a>
+										</li>
+										<li>
+											<a href="../de/page4-disciplines_de.php#lead">Leadklettern</a>
+										</li>
+										<li>
+											<a href="../de/page4-disciplines_de.php#speed">Speed</a>
+										</li>
+										<li>
+											<a href="../de/page4-disciplines_de.php#multi-pitch">Mehrseillängen</a>
+										</li>
+										<li>
+											<a class="no-border" href="../de/page4-disciplines_de.php#trad">Trad</a>
+										</li>
+									</ul>
+								</li>
+								<li class="deroulant">
+									<a href="../de/page5-spotsmythiques_de.php">Mythische Spots</a>
+									<ul class="sub-menu">
+										<li>
+											<a href="../de/page5-spotsmythiques_de.php#fontainebleau">Fontainebleau</a>
+										</li>
+										<li>
+											<a href="../de/page5-spotsmythiques_de.php#kalymnos">Kalymnos</a>
+										</li>
+										<li>
+											<a href="../de/page5-spotsmythiques_de.php#yosemite_valley">Yosemite</a>
+										</li>
+										<li>
+											<a href="../de/page5-spotsmythiques_de.php#siurana">Siurana</a>
+										</li>
+										<li>
+											<a class="no-border" href="../de/page5-spotsmythiques_de.php#rocklands">Rocklands</a>
+										</li>
+									</ul>
+								</li>
+								<li class="deroulant">
+									<a href="../de/page6-materiel_de.php">Ausrüstung</a>
+									<ul class="sub-menu">
+										<li>
+											<a href="../de/page6-materiel_de.php#chaussons">Kletterschuhe</a>
+										</li>
+										<li>
+											<a href="../de/page6-materiel_de.php#baudriers">Klettergurte</a>
+										</li>
+										<li>
+											<a href="../de/page6-materiel_de.php#cordes">Seile</a>
+										</li>
+										<li>
+											<a class="no-border" href="../de/page6-materiel_de.php#assurage">Sicherungsgeräte</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+
+							{# --- EN FRANÇAIS --- #}
+						{% else %}
+							<ul>
+								<li>
+									<a href="../fr/page1-accueil.php">Accueil</a>
+								</li>
+								<li class="deroulant">
+									<a href="../fr/page4-disciplines.php">Disciplines</a>
+									<ul class="sub-menu">
+										<li>
+											<a href="../fr/page4-disciplines.php#bloc">Le Bloc</a>
+										</li>
+										<li>
+											<a href="../fr/page4-disciplines.php#lead">La Voie</a>
+										</li>
+										<li>
+											<a href="../fr/page4-disciplines.php#speed">La Vitesse</a>
+										</li>
+										<li>
+											<a href="../fr/page4-disciplines.php#multi-pitch">La Grande Voie</a>
+										</li>
+										<li>
+											<a class="no-border" href="../fr/page4-disciplines.php#trad">Le Trad</a>
+										</li>
+									</ul>
+								</li>
+								<li class="deroulant">
+									<a href="../fr/page5-spotsmythiques.php">Spots Mythiques</a>
+									<ul class="sub-menu">
+										<li>
+											<a href="../fr/page5-spotsmythiques.php#fontainebleau">Fontainebleau</a>
+										</li>
+										<li>
+											<a href="../fr/page5-spotsmythiques.php#kalymnos">Kalymnos</a>
+										</li>
+										<li>
+											<a href="../fr/page5-spotsmythiques.php#yosemite_valley">Yosemite Valley</a>
+										</li>
+										<li>
+											<a href="../fr/page5-spotsmythiques.php#siurana">Siurana</a>
+										</li>
+										<li>
+											<a class="no-border" href="../fr/page5-spotsmythiques.php#rocklands">Rocklands</a>
+										</li>
+									</ul>
+								</li>
+								<li class="deroulant">
+									<a href="../fr/page6-materiel.php">Matériel</a>
+									<ul class="sub-menu">
+										<li>
+											<a href="../fr/page6-materiel.php#chaussons">Les chaussons</a>
+										</li>
+										<li>
+											<a href="../fr/page6-materiel.php#baudriers">Les baudriers</a>
+										</li>
+										<li>
+											<a href="../fr/page6-materiel.php#cordes">Les cordes</a>
+										</li>
+										<li>
+											<a class="no-border" href="../fr/page6-materiel.php#assurage">L'assurage</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						{% endif %}
+					</nav>
+				</div>
+
+				{# ======= MENU SECONDAIRE ======= #}
+
+				<div class="sub-nav-container">
+					<nav class="nav-header">
+						<ul>
+							{# --- EN ANGLAIS --- #}
+							{% if lang == 'en' %}
+								<li>
+									<a href="../en/page2-apropos_en.php">About</a>
+								</li>
+								<li>
+									<a href="../en/page3-contact_en.php" class="btn-contact">Contact</a>
+								</li>
+								{# {{ page_base }} permet de récupérer le nom de la page actuelle pour le changement de langue #}
+								<li class="lang-switch">
+									<a href="../fr/{{ page_base }}.php">🇫🇷 FR</a>
+								</li>
+								<li class="lang-switch">
+									<a href="../de/{{ page_base }}_de.php">🇩🇪 DE</a>
+								</li>
+
+								{# --- EN ALLEMAND --- #}
+							{% elseif lang == 'de' %}
+								<li>
+									<a href="../de/page2-apropos_de.php">Über uns</a>
+								</li>
+								<li>
+									<a href="../de/page3-contact_de.php" class="btn-contact">Kontakt</a>
+								</li>
+								<li class="lang-switch">
+									<a href="../fr/{{ page_base }}.php">🇫🇷 FR</a>
+								</li>
+								<li class="lang-switch">
+									<a href="../en/{{ page_base }}_en.php">🇬🇧 EN</a>
+								</li>
+
+								{# --- EN FRANÇAIS --- #}
+							{% else %}
+								<li>
+									<a href="../fr/page2-apropos.php">À Propos</a>
+								</li>
+								<li>
+									<a href="../fr/page3-contact.php" class="btn-contact">Contact</a>
+								</li>
+								<li class="lang-switch">
+									<a href="../en/{{ page_base }}_en.php">🇬🇧 EN</a>
+								</li>
+								<li class="lang-switch">
+									<a href="../de/{{ page_base }}_de.php">🇩🇪 DE</a>
+								</li>
+							{% endif %}
+						</ul>
+					</nav>
+				</div>
+
+			</div>
+		</header>
+
+		{% block main %}
+			<main>
+				<div class="main-content">
+
+					{# ========================================== #}
+					{# -------- EN ANGLAIS ---------#}
+
+						{% if lang == 'en' %}
+							<section class="intro-accueil"> <div class="title-container-statique">
+								<h1>ClimbScope : The Spirit of the Vertical</h1>
+							</div>
+							<h3>From forest bouldering to great alpine walls, explore the climbing universe without limits.</h3>
+							<p>Welcome to ClimbScope, the reference for passionate climbers. Whether you are a beginner trying to understand the difference between chalk and resin, or an expert looking for your next crag project, you are in the right place. We decode disciplines, list mythical spots, and test the gear that saves your life.</p>
+						</section>
+
+						<section class="categories">
+							<a href="page4-disciplines_en.php">
+								<div class="category-card">
+									<img src="../images/illustrations/disciplines-escalade.jpg" alt="Climbing Disciplines">
+									<h2>Different Disciplines</h2>
+									<p>Climbing is plural. Discover the nuances between the explosiveness of bouldering, the endurance of lead climbing, and the mental management of adventure terrain.</p>
+									<span class="btn-category">Explore Disciplines</span>
+								</div>
+							</a>
+
+							<div class="category-card">
+								<a href="page5-spotsmythiques_en.php">
+									<img src="../images/illustrations/spots-mythiques.jpeg" alt="Mythical Spots">
+									<h2>Legendary Spots</h2>
+									<p>Plan your next trip. From the sandstone forests of Fontainebleau to the tufas of Kalymnos, browse our guide to must-visit crags.</p>
+									<span class="btn-category">Discover Spots</span>
+								</div>
+							</a>
+
+							<a href="page6-materiel_en.php">
+								<div class="category-card">
+									<img src="../images/illustrations/materiel-escalade.jpg" alt="Climbing Gear">
+									<h2>Gear Advice</h2>
+									<p>Don't let chance choose your safety. Comparisons, technical reviews, and tips for choosing your shoes, ropes, and harnesses.</p>
+									<span class="btn-category">View Gear</span>
+								</div>
+							</a>
+
+						</section>
+
+						{# ========================================== #}
+						{# -------- EN ALLEMAND ---------#}
+
+					{% elseif lang == 'de' %}
+						<section class="intro-accueil">
+							<div class="title-container-statique">
+								<h1>ClimbScope : Der Geist der Vertikalen</h1>
+							</div>
+							<h3>Vom Bouldern im Wald bis zu großen Alpinwänden – entdecke das Kletteruniversum ohne Grenzen.</h3>
+							<p>Willkommen bei ClimbScope, der Referenz für leidenschaftliche Kletterer. Egal, ob du Anfänger bist und den Unterschied zwischen Magnesia und Harz verstehen willst, oder Experte auf der Suche nach deinem nächsten Fels-Projekt – hier bist du richtig. Wir entschlüsseln Disziplinen, listen mythische Spots auf und testen die Ausrüstung, die dein Leben rettet.</p>
+						</section>
+
+						<section class="categories">
+							<a href="page4-disciplines_de.php">
+								<div class="category-card">
+									<img src="../images/illustrations/disciplines-escalade.jpg" alt="Kletterdisziplinen">
+									<h2>Verschiedene Disziplinen</h2>
+									<p>Klettern ist vielfältig. Entdecke die Nuancen zwischen der Explosivität des Boulderns, der Ausdauer des Leadkletterns und dem mentalen Management im Abenteuergelände.</p>
+									<span class="btn-category">Disziplinen entdecken</span>
+								</div>
+							</a>
+
+							<a href="page5-spotsmythiques_de.php">
+								<div class="category-card">
+									<img src="../images/illustrations/spots-mythiques.jpeg" alt="Mythische Spots">
+									<h2>Legendäre Spots</h2>
+									<p>Plane deinen nächsten Trip. Von den Sandsteinwäldern Fontainebleaus bis zu den Sintersäulen von Kalymnos – durchstöbere unseren Guide zu den unverzichtbaren Felsen.</p>
+									<span class="btn-category">Spots entdecken</span>
+								</div>
+							</a>
+
+							<a href="page6-materiel_de.php">
+								<div class="category-card">
+									<img src="../images/illustrations/materiel-escalade.jpg" alt="Kletterausrüstung">
+									<h2>Ausrüstungstipps</h2>
+									<p>Überlasse deine Sicherheit nicht dem Zufall. Vergleiche, technische Bewertungen und Tipps zur Auswahl deiner Schuhe, Seile und Gurte.</p>
+									<span class="btn-category">Ausrüstung ansehen</span>
+								</div>
+							</a>
+						</section>
+
+						{# ========================================== #}
+						{# -------- EN FRANÇAIS ---------#}
+
+					{% else %}
+						<section class="intro-accueil">
+							<div class="title-container-statique">
+								<h1>ClimbScope : L'Esprit de la Verticale</h1>
+							</div>
+							<h3>Du bloc en forêt aux grandes parois alpines, explorez l'univers de l'escalade sans limite.</h3>
+							<p>Bienvenue sur ClimbScope, la référence pour les grimpeurs passionnés. Que vous soyez débutant cherchant à comprendre la différence entre la magnésie et la résine, ou expert en quête de votre prochain projet en falaise, vous êtes au bon endroit. Nous décryptons pour vous les disciplines, nous répertorions les spots mythiques et nous testons le matériel qui vous sauvera la vie.</p>
+						</section>
+
+						<section class="categories">
+							<a href="page4-disciplines.php">
+								<div class="category-card">
+									<img src="../images/illustrations/disciplines-escalade.jpg" alt="Disciplines d'Escalade">
+									<h2>Différentes Disciplines</h2>
+									<p>L'escalade est plurielle. Découvrez les nuances entre l'explosivité du bloc, l'endurance de la difficulté et la gestion mentale du terrain d'aventure.</p>
+									<span class="btn-category">Explorer les Disciplines</span>
+								</div>
+							</a>
+
+							<a href="page5-spotsmythiques.php">
+								<div class="category-card">
+									<img src="../images/illustrations/spots-mythiques.jpeg" alt="Spots Mythiques">
+									<h2>Spots de Légende</h2>
+									<p>Préparez votre prochain trip. Des forêts de grès de Fontainebleau aux colonnettes de Kalymnos, parcourez notre guide des falaises incontournables.</p>
+									<span class="btn-category">Découvrir les Spots</span>
+								</div>
+							</a>
+
+
+							<a href="page6-materiel.php">
+								<div class="category-card">
+									<img src="../images/illustrations/materiel-escalade.jpg" alt="Matériel d'Escalade">
+									<h2>Conseils Matériel</h2>
+									<p>Ne laissez pas le hasard choisir votre sécurité. Comparatifs, avis techniques et bons plans pour choisir vos chaussons, cordes et baudriers.</p>
+									<span class="btn-category">Voir le Matériel</span>
+								</div>
+							</a>
+						</section>
+					{% endif %}
+
+				</div>
+			</main>
+		{% endblock %}
+
+		<footer class="site-footer">
+			<div class="footer-content">
+
+				{# ========================================== #}
+				{# ---------- EN ANGLAIS ---------------- #}
+
+					{% if lang == 'en' %}
+						<div class="footer-col"> <h3>ClimbScope</h3>
+						<p>The living encyclopedia of the vertical world. Created by enthusiasts to democratize climbing safely.</p>
+					</div>
+
+					<div class="footer-col">
+						<h3>Explore</h3>
+						<ul>
+							<li><a href="../en/page2-apropos_en.php">Terms of Service</a></li>
+							<li><a href="https://www.ffme.fr/">The Federation (FFME)</a></li>
+						</ul>
+					</div>
+
+					<div class="footer-col">
+						<h3>Sitemap</h3>
+						<ul>
+							<li><a href="../en/page1-accueil_en.php">Home</a></li>
+							<li><a href="../en/page4-disciplines_en.php">Disciplines</a></li>
+							<li><a href="../en/page5-spotsmythiques_en.php">Mythical Spots</a></li>
+							<li><a href="../en/page6-materiel_en.php">Gear Guide</a></li>
+							<li><a href="../en/page2-apropos_en.php">About</a></li>
+							<li><a href="../en/page3-contact_en.php">Contact</a></li>
+						</ul>
+					</div>
+
+					<div class="footer-col">
+						<h3>Follow us</h3>
+						<div class="reseaux-sociaux">
+							<a href="#">
+								<i class="bi bi-instagram"></i>
+							</a>
+							<a href="#">
+								<i class="bi bi-facebook"></i>
+							</a>
+							<a href="#">
+								<i class="bi bi-youtube"></i>
+							</a>
+							<a href="#">
+								<i class="bi bi-twitter-x"></i>
+							</a>
+						</div>
+					</div>
+
+					{# ========================================== #}
+					{# ---------- EN ALLEMAND --------------- #}
+
+				{% elseif lang == 'de' %}
+					<div class="footer-col">
+						<h3>ClimbScope</h3>
+						<p>Die lebende Enzyklopädie der Vertikalen. Von Enthusiasten erstellt, um das Klettern sicher zu demokratisieren.</p>
+					</div>
+
+					<div class="footer-col">
+						<h3>Entdecken</h3>
+						<ul>
+							<li><a href="../de/page2-apropos_de.php">Nutzungsbedingungen</a></li>
+							<li><a href="https://www.ffme.fr/">Der Verband (FFME)</a></li>
+						</ul>
+					</div>
+
+					<div class="footer-col">
+						<h3>Seitenübersicht</h3>
+						<ul>
+							<li><a href="../de/page1-accueil_de.php">Startseite</a></li>
+							<li><a href="../de/page4-disciplines_de.php">Disziplinen</a></li>
+							<li><a href="../de/page5-spotsmythiques_de.php">Mythische Spots</a></li>
+							<li><a href="../de/page6-materiel_de.php">Ausrüstung</a></li>
+							<li><a href="../de/page2-apropos_de.php">Über uns</a></li>
+							<li><a href="../de/page3-contact_de.php">Kontakt</a></li>
+						</ul>
+					</div>
+
+					<div class="footer-col">
+						<h3>Folgen Sie uns</h3>
+						<div class="reseaux-sociaux">
+							<a href="#">
+								<i class="bi bi-instagram"></i>
+							</a>
+							<a href="#">
+								<i class="bi bi-facebook"></i>
+							</a>
+							<a href="#">
+								<i class="bi bi-youtube"></i>
+							</a>
+							<a href="#">
+								<i class="bi bi-twitter-x"></i>
+							</a>
+						</div>
+					</div>
+
+					{# ========================================== #}
+					{# ---------- EN FRANÇAIS --------------- #}
+
+				{% else %}
+					<div class="footer-col">
+						<h3>ClimbScope</h3>
+						<p>L'encyclopédie vivante de la verticale. Créé par des passionnés pour démocratiser la grimpe en toute sécurité.</p>
+					</div>
+
+					<div class="footer-col">
+						<h3>Explorer</h3>
+						<ul>
+							<li><a href="../fr/page2-apropos.php">Conditions Générales d'Utilisation</a></li>
+							<li><a href="https://www.ffme.fr/">La Fédération (FFME)</a></li>
+						</ul>
+					</div>
+
+					<div class="footer-col">
+						<h3>Plan du site</h3>
+						<ul>
+							<li><a href="../fr/page1-accueil.php">Accueil</a></li>
+							<li><a href="../fr/page4-disciplines.php">Les Disciplines</a></li>
+							<li><a href="../fr/page5-spotsmythiques.php">Les Spots Mythiques</a></li>
+							<li><a href="../fr/page6-materiel.php">Le Matériel</a></li>
+							<li><a href="../fr/page2-apropos.php">À Propos</a></li>
+							<li><a href="../fr/page3-contact.php">Contact</a></li>
+						</ul>
+					</div>
+
+					<div class="footer-col">
+						<h3>Suivez-nous</h3>
+						<div class="reseaux-sociaux">
+							<a href="#">
+								<i class="bi bi-instagram"></i>
+							</a>
+							<a href="#">
+								<i class="bi bi-facebook"></i>
+							</a>
+							<a href="#">
+								<i class="bi bi-youtube"></i>
+							</a>
+							<a href="#">
+								<i class="bi bi-twitter-x"></i>
+							</a>
+						</div>
+					</div>
+				{% endif %}
+
+			</div>
+
+			<div class="footer-bottom">
+				{% if lang == 'en' %}
+					<p>&copy; 2026 ClimbScope - Climb higher, live stronger.</p>
+				{% elseif lang == 'de' %}
+					<p>&copy; 2026 ClimbScope - Klettere höher, lebe intensiver.</p>
+				{% else %}
+					<p>&copy; 2026 ClimbScope - Grimpez plus haut, vivez plus fort.</p>
+				{% endif %}
+			</div>
+		</footer>
+
+	</body>
+
+</html>

@@ -1,0 +1,9 @@
+{
+    "name": "borism-afk/climbscope",
+    "description": "Climbscope, site sur l'escalade réalisé en SAÉ 1.05 (B.U.T MMI, IUT de Haguenau)",
+    "type": "project",
+    "require": {
+        "php": ">=8.0",
+        "twig/twig": "^3.7"
+    }
+}

@@ -1,0 +1,89 @@
+/* === CSS POUR LE / LES FORMULAIRES DE CONTACT === */
+
+/* --- Formulaire --- */
+
+.contact-form {
+    background-color: var(--form-bg);
+    padding: 10px 20px;
+    border: 1px solid var(--accent);
+    border-radius: 15px;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 8px;
+    margin-top: 5px;
+    resize: vertical;
+    /* Permet de redimensionner uniquement verticalement --> variable vue dans le code des textarea de Colibri */
+}
+
+
+.contact-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.btn-form {
+    background-color: var(--accent);
+    padding: 8px 20px !important;
+    /* !important permet de forcer la variable https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/important */
+    border-radius: 50px;
+    color: white !important;
+    font-weight: bold !important;
+    border-bottom: none !important;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 15px auto 0 auto;
+}
+
+.btn-form:hover {
+    background-color: var(--hover-bg);
+}
+
+/* --- Logos à gauche et à droite --- */
+
+.formulaire {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-contact-top {
+    width: 40%;
+    margin: auto 0;
+}
+
+.logo-contact-bottom {
+    width: 40%;
+    margin: auto 0;
+}
+
+.contact-intro h2 {
+    text-align: center;
+    color: var(--accent);
+    margin-top: 0;
+    font-size: 20px;
+}
+.contact-intro p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}

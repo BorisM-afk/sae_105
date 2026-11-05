@@ -1,0 +1,85 @@
+{% extends 'base.twig' %}
+
+{% block css %}
+	<link rel="stylesheet" href="../css/cat1.css">
+{% endblock %}
+
+{% block main %}
+	{# Contenu du main #}
+	<main class="categorie-main">
+		<div class="title-container-cat">
+			<h1>{{ page_titre }}</h1>
+		</div>
+
+		<div class="navigation-categories">
+			{% if lang == 'fr' %}
+				<h3>
+					<i class="fa-solid fa-compass"></i>
+					Sommaire</h3>
+			{% elseif lang == 'en' %}
+				<h3>
+					<i class="fa-solid fa-compass"></i>
+					Contents</h3>
+			{% elseif lang == 'de' %}
+				<h3>
+					<i class="fa-solid fa-compass"></i>
+					Inhalt</h3>
+			{% endif %}
+			<div class="nav-cat-border">
+				{% for id, cat in catA %}
+					<a href="#{{ cat.id }}">{{ cat['title-id'] }}</a>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="categorie-section">
+			{% for cat in catA %}
+				<article class="cat1-article" id="{{ cat.id }}">
+					<div class="image-article">
+						<img src="{{ cat.image }}" alt="{{ cat.titre }}">
+					</div>
+
+					<div class="contenu-article">
+						<h2>{{ cat.titre }}</h2>
+						<p>{{ cat.description }}</p>
+						<div class="infos-cles">
+							<h3>Informations clés :</h3>
+							<ul>
+								<li>
+									<i class="bi bi-rulers"></i>
+									{{ infos_cles['hauteur_moyenne'] }}
+									{{ cat.infos_caseA.hauteur_moyenne }}</li>
+								<li>
+									<i class="bi bi-hourglass-split"></i>
+									{{ infos_cles['annee_apparition'] }}
+									{{ cat.infos_caseA.annee_apparition }}</li>
+								<li>
+									<i class="bi bi-mortarboard"></i>
+									{{ infos_cles['echelle_cotation'] }}
+									{{ cat.infos_caseA.echelle_cotation }}</li>
+								<li>
+									<i class="bi bi-signpost-split-fill"></i>
+									{{ infos_cles['lieu_pratique'] }}
+									{{ cat.infos_caseA.lieu_pratique }}</li>
+							</ul>
+						</div>
+
+						<div class="contenu-supp">
+							<p>{{ infos_cles['equipement_principal'] }}
+								{% for equip in cat.equipement_principal %}
+									<span class="tag1">{{ equip }}</span>
+								{% endfor %}
+							</p>
+
+							<p>{{ infos_cles['profil_physique'] }}
+								{% for profil in cat.profil_physique %}
+									<span class="tag2">{{ profil }}</span>
+								{% endfor %}
+							</p>
+						</div>
+					</div>
+				</article>
+			{% endfor %}
+		</div>
+	</main>
+{% endblock %}
