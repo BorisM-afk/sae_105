@@ -50,4 +50,4 @@ Puis ouvrir <http://localhost:8000/fr/page1-accueil.php>.
 ## Auteur
 
 Boris Miletic, étudiant en B.U.T MMI à l'IUT de Haguenau.
-[Portfolio](https://borism-afk.github.io/portfolio/) · [LinkedIn](https://www.linkedin.com/in/boris-miletic-867935315)
+[Portfolio](https://miletic-boris.fr/) · [LinkedIn](https://www.linkedin.com/in/boris-miletic-867935315)
