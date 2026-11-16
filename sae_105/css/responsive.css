@@ -1,0 +1,373 @@
+/* === ADAPTATION AUX ÉCRANS (tablette et téléphone) === */
+/* Feuille chargée en dernier : elle ne fait qu'ajuster la mise en page des autres feuilles */
+
+/* --- Crédit du pied de page (toutes tailles) --- */
+.credit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0 0;
+    font-size: 13px;
+    color: #7f8c8d;
+}
+
+.credit-bm {
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background-color: var(--accent);
+    color: white;
+    font-family: "Unbounded", 'Segoe UI', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.credit-bm:hover,
+.credit-bm:focus-visible {
+    background-color: var(--hover-bg);
+    color: var(--text-contenu);
+    transform: rotate(-6deg) scale(1.08);
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.45);
+}
+
+/* --- Bouton du menu mobile : caché sur grand écran --- */
+.menu-toggle {
+    display: none;
+}
+
+/* Le header n'a plus besoin de ses 200px de marge : son contenu est déjà centré sur 1200px */
+header {
+    padding: 0 20px;
+}
+
+/* =========================================
+   TABLETTE ET TÉLÉPHONE : MENU REPLIÉ
+   ========================================= */
+@media (max-width: 1100px) {
+    body {
+        padding-top: 64px;
+    }
+
+    header {
+        height: auto;
+        padding: 0 16px;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+    }
+
+    .header-content {
+        flex-wrap: wrap;
+        margin: 0 auto;
+        padding: 8px 0;
+    }
+
+    .main-nav-container {
+        flex: 1 1 100%;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .main-nav-container img {
+        height: 52px;
+    }
+
+    /* Bouton à trois traits */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 46px;
+        height: 46px;
+        margin-left: auto;
+        padding: 0 11px;
+        background: transparent;
+        border: solid 2px var(--sous-menu-bg);
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        height: 2px;
+        background-color: var(--text-light);
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    header.is-open .menu-toggle span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    header.is-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    header.is-open .menu-toggle span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Les menus sont cachés, puis affichés en liste quand le menu est ouvert */
+    header nav {
+        display: none;
+        width: 100%;
+    }
+
+    header.is-open nav {
+        display: block;
+    }
+
+    header.is-open .main-nav-container nav {
+        margin-top: 10px;
+        border-top: solid 1px var(--sous-menu-bg);
+    }
+
+    .sub-nav-container {
+        flex: 1 1 100%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    header nav ul li {
+        border-bottom: solid 1px rgba(255, 255, 255, 0.08);
+    }
+
+    header nav a {
+        display: block;
+        padding: 12px 4px;
+        font-size: 18px;
+    }
+
+    header nav a:hover {
+        border: none;
+        padding: 12px 4px 12px 12px;
+        filter: none;
+    }
+
+    /* Les sous-menus restent repliés : chaque page a son propre sommaire */
+    .sub-menu,
+    header nav > ul li:hover .sub-menu {
+        display: none;
+    }
+
+    /* Menu secondaire : À propos, Contact et langues sur une ligne */
+    .sub-nav-container nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 18px;
+        padding: 14px 0 6px;
+    }
+
+    .sub-nav-container nav ul li {
+        border: none;
+    }
+
+    .sub-nav-container nav a,
+    .sub-nav-container nav a:hover {
+        padding: 6px 2px;
+    }
+
+    .sub-nav-container .btn-contact,
+    .sub-nav-container .btn-contact:hover {
+        padding: 8px 20px;
+    }
+
+    /* --- Contenu --- */
+    main {
+        margin: 30px 16px;
+        padding: 16px;
+        border-radius: 22px;
+    }
+
+    .categorie-main {
+        margin: 30px auto;
+        padding: 0 16px;
+    }
+
+    /* Spots : deux cartes par ligne */
+    .cat2-article {
+        max-width: 48%;
+    }
+
+    /* Matériel : le sommaire passe au-dessus des fiches */
+    .matos-page {
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .matos-aside {
+        position: static;
+        width: 100%;
+    }
+
+    .nav-matos ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .aside-info,
+    .aside-footer {
+        display: none;
+    }
+
+    .section-apropos h2 {
+        width: auto;
+        max-width: 100%;
+    }
+}
+
+/* =========================================
+   TABLETTE PORTRAIT ET TÉLÉPHONE
+   ========================================= */
+@media (max-width: 820px) {
+    /* Disciplines : l'image passe au-dessus du texte */
+    .cat1-article,
+    .cat1-article:nth-child(odd),
+    .cat1-article:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .image-article {
+        min-height: 0;
+        height: 260px;
+        flex: none;
+    }
+
+    .cat1-article img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cat1-article:hover,
+    .cat2-article:hover,
+    .matos-row:hover {
+        transform: none;
+    }
+
+    /* Sommaires des catégories : les liens passent à la ligne */
+    .nav-cat-border {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .navigation-categories a {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+
+    /* Matériel : chaque fiche s'empile */
+    .matos-row {
+        flex-direction: column;
+    }
+
+    .col-id-produit,
+    .col-specs,
+    .col-expert {
+        width: 100%;
+        border-right: none;
+    }
+
+    .col-id-produit,
+    .col-specs {
+        border-bottom: 1px solid var(--main-border);
+    }
+
+    .matos-main-content {
+        padding: 16px;
+    }
+
+    /* Contact : le formulaire prend toute la largeur, les logos encadrent le haut et le bas */
+    .formulaire {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* les logos verticaux prendraient tout l'écran : on ne garde que le formulaire */
+    .logo-contact-top,
+    .logo-contact-bottom {
+        display: none;
+    }
+}
+
+/* =========================================
+   TÉLÉPHONE
+   ========================================= */
+@media (max-width: 600px) {
+    main {
+        margin: 24px 10px;
+        padding: 12px;
+        min-height: 0;
+    }
+
+    .categorie-main {
+        padding: 0 10px;
+    }
+
+    .title-container-statique h1,
+    .title-container-cat h1 {
+        font-size: 26px;
+        margin: 12px;
+        padding: 12px 14px;
+        border-radius: 20px;
+    }
+
+    .title-container-cat {
+        border-radius: 22px;
+        margin-top: 10px;
+    }
+
+    .intro-accueil h3 {
+        font-size: 17px;
+    }
+
+    .navigation-categories h3 {
+        font-size: 21px;
+    }
+
+    .contenu-article h2,
+    .cat-header h2,
+    .section-apropos h2 {
+        font-size: 23px;
+    }
+
+    .contenu-article p {
+        text-align: left;
+    }
+
+    .image-article {
+        height: 210px;
+    }
+
+    /* Spots : une carte par ligne */
+    .cat2-article {
+        max-width: 100%;
+    }
+
+    .nav-matos a {
+        padding: 8px 14px;
+        font-size: 15px;
+    }
+
+    .site-footer {
+        padding: 36px 16px 20px;
+    }
+
+    .footer-content {
+        gap: 26px;
+    }
+}

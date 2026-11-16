@@ -21,6 +21,7 @@ Site sur l'escalade réalisé pour la **SAÉ 1.05** du B.U.T MMI (IUT de Haguena
 - **Twig 3** : un gabarit commun (`templates/base.twig`) et un gabarit par type de page.
 - **Données séparées du code** : le contenu des articles est rangé par langue dans `include/data_fr`, `data_en` et `data_de`.
 - **HTML / CSS** : variables CSS pour la palette, une feuille par catégorie.
+- **Responsive** : `css/responsive.css` adapte toutes les pages à la tablette et au téléphone (menu repliable, articles empilés, carrousel de sommaires qui passe à la ligne).
 
 ## Arborescence
 

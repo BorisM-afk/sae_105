@@ -17,10 +17,15 @@
 			<link rel="stylesheet" href="../css/statiques.css">
 		{% endblock %}
 
+		{# Adaptation mobile et tablette : chargée en dernier pour passer après les feuilles de chaque page #}
+		<link rel="stylesheet" href="../css/responsive.css">
+		{# Police du badge « BM » du pied de page (uniquement les lettres B et M) #}
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800&text=BM&display=swap">
+
 	</head>
 
 	<body>
-		<header>
+		<header id="menu-mobile">
 			<div
 				class="header-content">
 
@@ -34,6 +39,11 @@
 					{% else %}
 						<a href="../fr/page1-accueil.php" class="logo"><img src="../images/logo/logo-climbscope.png" alt="Logo"></a>
 					{% endif %}
+
+					{# Bouton du menu sur mobile (affiché uniquement sur petit écran) #}
+					<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="{% if lang == 'en' %}Open menu{% elseif lang == 'de' %}Menü öffnen{% else %}Ouvrir le menu{% endif %}">
+						<span></span><span></span><span></span>
+					</button>
 
 					<nav>
 						{# --- EN ANGLAIS --- #}
@@ -579,8 +589,21 @@
 				{% else %}
 					<p>&copy; 2026 ClimbScope - Grimpez plus haut, vivez plus fort.</p>
 				{% endif %}
+				<p class="credit">{% if lang == 'en' %}Website by{% elseif lang == 'de' %}Umsetzung{% else %}Réalisation{% endif %} :
+					<a class="credit-bm" href="https://www.miletic-boris.fr" target="_blank" rel="noopener" aria-label="Boris Miletic" title="Boris Miletic">BM</a>
+				</p>
 			</div>
 		</footer>
+
+		<script>
+			// Menu mobile : ouvre / ferme la navigation
+			const menuBtn = document.querySelector('.menu-toggle');
+			const entete = document.querySelector('header');
+			menuBtn.addEventListener('click', () => {
+				const ouvert = entete.classList.toggle('is-open');
+				menuBtn.setAttribute('aria-expanded', ouvert);
+			});
+		</script>
 
 	</body>
 
